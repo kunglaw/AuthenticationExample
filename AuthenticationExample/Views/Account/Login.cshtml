@@ -1,0 +1,25 @@
+﻿@Html.ValidationSummary(true)
+@{
+    ViewBag.Title = "Login";
+}
+
+<fieldset>
+    <legend>
+        Login
+    </legend>
+    @using (Html.BeginForm("Login", "Account", FormMethod.Post))
+    {
+        <div>
+            @Html.ValidationMessage("Error", null, new { @class = "text text-danger"})
+            <div class="form-group">
+                <label> Email </label>
+                <input type="email" name="email" id="email" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label> Password </label>
+                <input type="password" name="password" id="password" class="form-control" />
+            </div>
+            <button class="btn btn-success" type="submit"> Submit</button>
+        </div>
+    }
+</fieldset>

@@ -1,0 +1,23 @@
+﻿@if (Session["email"] == null)
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li class="">
+            <a href="/Account/login"> Login </a>
+        </li>
+        <li class="">
+            <a href="/Account/register"> Register </a>
+        </li>
+    </ul>
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li class="">
+            <a href="#"> @Session["Email"] </a>
+        </li>
+        <li>
+            <a href="/Account/Logout" onclick="return confirm('Are you sure want to logout ?')">Logout</a>
+        </li>
+        
+    </ul>
+}
